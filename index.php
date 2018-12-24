@@ -29,7 +29,7 @@ $(document).ready(function()
      var settings = {
         url: "importar.php",
         method: "POST",
-        allowedTypes:"pdf",
+        allowedTypes:"*",
         fileName: "file",
         multiple: true,
         
