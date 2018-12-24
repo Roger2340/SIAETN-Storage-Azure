@@ -1,5 +1,7 @@
 <?php
 
+  include("conexao_azure.php");
+
   $listBlobsOptions = new ListBlobsOptions();
   $listBlobsOptions->setPrefix("HelloWorld");
 
