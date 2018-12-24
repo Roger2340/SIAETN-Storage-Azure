@@ -3,12 +3,12 @@
   include("conexao_azure.php");
 
   $listBlobsOptions = new ListBlobsOptions();
-  $listBlobsOptions->setPrefix("HelloWorld");
+  //$listBlobsOptions->setPrefix("HelloWorld");
 
     echo "These are the blobs present in the container: ";
 
     do{
-        $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
+        $result = $blobClient->listBlobs("documents", $listBlobsOptions);
         foreach ($result->getBlobs() as $blob)
         {
             echo $blob->getName().": ".$blob->getUrl()."<br />";
