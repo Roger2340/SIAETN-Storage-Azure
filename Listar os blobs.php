@@ -17,4 +17,4 @@
         $listBlobsOptions->setContinuationToken($result->getContinuationToken());
     } while($result->getContinuationToken());
     
-<?
+?>
