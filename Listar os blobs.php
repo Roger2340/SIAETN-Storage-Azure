@@ -1,20 +1,20 @@
 <?php
-
+	
   include("conexao_azure.php");
 
-  $listBlobsOptions = new ListBlobsOptions();
-  //$listBlobsOptions->setPrefix("HelloWorld");
+  try {
+        $blob_list = $blobRestProxy->listblobs("documents");
+        $blobs = $blob_list->getBlobs();
 
-    echo "These are the blobs present in the container: ";
-
-    do{
-        $result = $blobClient->listBlobs("documents", $listBlobsOptions);
-        foreach ($result->getBlobs() as $blob)
+        foreach($blobs as $blob)
         {
             echo $blob->getName().": ".$blob->getUrl()."<br />";
         }
+    }
+    catch (ServiceException $e){
+        $code = $e->getCode();
+        $error_message = $e->getMessage();
+        echo $code.": ".$error_mensage."<br />";
+    }
 
-        $listBlobsOptions->setContinuationToken($result->getContinuationToken());
-    } while($result->getContinuationToken());
-    
 ?>
