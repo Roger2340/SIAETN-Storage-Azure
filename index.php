@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Gerenciamento de Documentos</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="CSS/uploadfilemulti.css" rel="stylesheet">
