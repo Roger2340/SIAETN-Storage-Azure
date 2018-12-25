@@ -1,61 +1,67 @@
 <?php
-	$conn = new mysqli("localhost", "root", "","documentos");
-	mysqli_set_charset($conn,"utf8");
+
+	include("conexao.php");
+    include("conexao_azure.php");
 
 	$id_arquivo = $_GET["id_arquivo"];
 	$acao 		= $_GET["acao"];
 
-	$result = $conn->query("SELECT conteudo, nome FROM arquivos WHERE id_arquivo = $id_arquivo");
+	$result = $conn->query("SELECT nome FROM arquivos WHERE id_arquivo = $id_arquivo");
 
 	$query = mysqli_fetch_object($result);
 
-	$pasta = "ARQUIVOS/".$query->nome;
-	$dados = converte($query->conteudo);
+	$ext = end(explode(".",$query->nome));
+
 
 	if(mysqli_num_rows($result) > 0){
 
 		if($acao == "VISUALIZAR"){
 
-			if (file_exists($pasta)) {
+			if($ext != "pdf"){
+				header('Content-Type: image/'.$ext);
+			}else{
+				header('Content-Type: application/'.$ext);
+			}
 
-	            header('Content-Type: application/pdf');
+			try    {
+
+				
 	            header('Content-disposition: inline; filename='.$query->nome);
-	            readfile($pasta);
-	                               
-	        }else{
+	            
+			    $blob = $blobRestProxy->getBlob("arquivos", $query->nome);
+			    fpassthru($blob->getContentStream());
 
-				header('Pragma: public');
-		        header('Expires: 0');
-		        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
-		        header('Content-Type: application/pdf');
-		        header('Content-disposition: inline; filename='.$query->nome);
-		        header('Content-Transfer-Encoding: binary');
-		        header('Content-Length: '.strlen($dados));
+			   
+			}
+			catch(ServiceException $e){
+			  
+			    $code = $e->getCode();
+			    $error_message = $e->getMessage();
+			    echo $code.": ".$error_message."<br />";
+			}
 
-		        print $dados;
-	        }
+		
 		}
 
 		if($acao == "DOWNLOAD"){
 
-			if (file_exists($pasta)) {
 
-	            header('Content-Type: application/pdf');
-	            header('Content-Disposition: attachment; filename='.$query->nome);
-	            readfile($pasta);
-	                               
-	        }else{
+			try    {
 
-				header('Pragma: public');
-		        header('Expires: 0');
-		        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
-		        header('Content-Type: application/pdf');
-		        header('Content-Disposition: attachment; filename='.$query->nome);
-		        header('Content-Transfer-Encoding: binary');
-		        header('Content-Length: '.strlen($dados));
+				header('Content-Type: application/pdf');
+	            header('Content-disposition: attachment; filename='.$query->nome);
+	            
+			    $blob = $blobRestProxy->getBlob("arquivos", $query->nome);
+			    fpassthru($blob->getContentStream());
 
-		        print $dados;
-	        }
+			   
+			}
+			catch(ServiceException $e){
+			  
+			    $code = $e->getCode();
+			    $error_message = $e->getMessage();
+			    echo $code.": ".$error_message."<br />";
+			}
 		}
 		
 	}

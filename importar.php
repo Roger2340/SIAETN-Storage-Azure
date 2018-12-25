@@ -1,15 +1,15 @@
 
 <?php
-        //include("conexao.php");
+        include("conexao.php");
         include("conexao_azure.php");
 
-	$arquivo 	= fopen($_FILES['file']['tmp_name'].'', "r");
+		$arquivo 	= fopen($_FILES['file']['tmp_name'].'', "r");
         $nome 		= $_FILES["file"]["name"];
         $tamanho 	= $_FILES["file"]["size"];
 
 
         try    {
-            $blobRestProxy->createBlockBlob("documents", $nome, $arquivo);
+            $blobRestProxy->createBlockBlob("arquivos", $nome, $arquivo);
         }
         catch(ServiceException $e){
             $code = $e->getCode();
@@ -18,8 +18,8 @@
         }
 
 
-	//$sql = "INSERT INTO arquivos (nome, tamanho, data) VALUES ('$nome','$tamanho',now())";
+		$sql = "INSERT INTO arquivos (nome, tamanho, data) VALUES ('$nome','$tamanho',now())";
 
-     	//$result = $conn->query($sql)or die(mysqli_errno());
+     	$result = $conn->query($sql)or die(mysqli_errno());
 
 ?>

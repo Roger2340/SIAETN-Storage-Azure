@@ -4,7 +4,7 @@
 	use WindowsAzure\Common\ServicesBuilder;
 	use MicrosoftAzure\Storage\Common\ServiceException;
 
-	$chave_conexao = 'DefaultEndpointsProtocol=https;AccountName=siaetndisco1;AccountKey=EhKiews27NDLTXvfkHnOEfwUG91AFzPYpQevRxoJ5nCXywEBKEsGuEKbAlwPHd/aWaLY6yq1ZcplIdXV+A7yyw==';
+	$chave_conexao = 'DefaultEndpointsProtocol=https;AccountName=hightechdocs;AccountKey=1TsDbaZ812xJTLebtct8SVcMjva7kL7JchxTyKEYIXhT0nftwhEFb6XJsfGx+hYw7aYwD2XVF1wTr67mc+KBaQ==';
 	$blobRestProxy = ServicesBuilder::getInstance()->createBlobService($chave_conexao);
 
 
