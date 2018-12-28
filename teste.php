@@ -1,6 +1,6 @@
 <?php
 
-    include_once("conexao.php")
+    include("conexao.php")
     $sql = "Select 
             T1.CODIGO,
             ISNULL(T1.NUM_LICENCA, T1.NUM_PROTOCOLO) as LICENCA,
