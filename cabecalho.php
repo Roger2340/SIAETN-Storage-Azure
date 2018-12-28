@@ -10,14 +10,11 @@
     
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.php">Gerenciamento de Armazenamento Azure</a>
-            </div>
-            <div>
+                <a class="navbar-brand" href="index.php">Gerenciamento de Armazenamento Azure</a><br />
                 <ul class="nav navbar-nav">
-
+                    <li><a href="index.php">HOME</a></li>
                     <li><a href="index(2).php">Arquivos AET</a></li>
                     <li><a href="arquivos.php">Arquivos Veículos</a></li>
-
                 </ul>
             </div>
         </div>

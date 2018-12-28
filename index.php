@@ -1,5 +1,11 @@
-<?php include("cabecalho.php"); ?>
+<?php 
+    include("cabecalho.php");
+?>
             <h1>Bem vindo!</h1>
 
-            <button><a href="produto-formulario.php">Adicionar Produto</a></button>
-<?php include("rodape.php"); ?>
+            <!--<button><a href="produto-formulario.php">Adicionar Produto</a></button>-->
+
+<?php 
+    include("rodape.php"); 
+?>
+
