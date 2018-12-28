@@ -9,7 +9,7 @@
 
 
         try    {
-            $blobRestProxy->createBlockBlob("arquivos", $nome, $arquivo);
+            $blobRestProxy->createBlockBlob("documents", $nome, $arquivo);
         }
         catch(ServiceException $e){
             $code = $e->getCode();
