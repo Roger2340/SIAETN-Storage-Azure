@@ -1,5 +1,7 @@
-<!DOCTYPE html>
-<html>
+<?php 
+    include("cabecalho.php");
+?>
+
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -9,7 +11,7 @@
 <body>
 
 <div class="container">
-  <h2>Meus Arquivos</h2>
+  <h2>Meus Arquivos para Veículos</h2>
                                                                                         
   <div class="table-responsive">          
   <table class="table table-hover">
