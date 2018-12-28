@@ -17,8 +17,17 @@
             WHERE T5.SIGLA_REGIAO <> 'NULL'"
     $result = sqlsrv_query($conn, $sql);
 
+    print "<table>
+                <tr>
+                <th>Licença</th>
+                <th>Cliente</th>
+                <th>Placa Cavalo</th>
+                <th>Placa Reboque</th>
+                <th>Região</th>
+                <th>Ações</th>
+            </tr>";
     while ($arquivo =  sqlsrv_fetch_object($result)) {
-        echo "<tr>
+        print "<tr>
                 <td>".$arquivo->LICENCA."</td>
                 <td>".$arquivo->NomeAbreviado."</td>
                 <td>".$arquivo->PLCA_CAVALO."</td>
@@ -33,4 +42,5 @@
 
             </tr>";
     }
+    print "</table>";
 ?>
