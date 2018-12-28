@@ -8,7 +8,7 @@
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
     
-        <div class="containers">
+        <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand" href="index.php">Gerenciamento de Armazenamento Azure</a><br />
                 <ul class="nav navbar-nav">
@@ -24,5 +24,5 @@
     </div>
     
 
-    <div class="containers">
+    <div class="container">
         <div class="principal">
