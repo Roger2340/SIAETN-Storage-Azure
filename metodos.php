@@ -10,8 +10,7 @@
 
 	switch ($metodo) {
 		case 'LISTAR_ARQUIVOS':
-			
-			$result = $conn->query("Select 
+				$result = $conn->sqlsrv_query("Select 
 									T1.CODIGO,
 									ISNULL(T1.NUM_LICENCA, T1.NUM_PROTOCOLO) as LICENCA,
 									T2.NomeAbreviado,
