@@ -13,8 +13,9 @@
                 <a class="navbar-brand" href="index.php">Gerenciamento de Armazenamento Azure</a><br />
                 <ul class="nav navbar-nav">
                     <li><a href="index.php">HOME</a></li>
-                    <li><a href="upload.php">Arquivos AET</a></li>
-                    <li><a href="arquivos.php">Arquivos Veículos</a></li>
+                    <li><a href="arquivos.php?M="1"">Arquivos AET</a></li>
+                    <li><a href="arquivos.php?M="2"">Arquivos Veículos</a></li>
+                    <li><a href="upload.php">Fazer UPLOAD</a></li>
                 </ul>
             </div>
         </div>
