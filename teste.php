@@ -20,7 +20,7 @@
         
         
         $stmt->execute();
-        while ($arquivo = $allProdsQuery->fetch()) {
+        while ($arquivo = $stmt->fetchAll(PDO::FETCH_OBJ)) {
             print_r($arquivo);
         
             echo $arquivo['LICENCA'];
