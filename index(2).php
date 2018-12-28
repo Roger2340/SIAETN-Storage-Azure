@@ -2,10 +2,7 @@
     include("cabecalho.php");
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
 <head>
-  <title>Gestão Storage Azure</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="CSS/uploadfilemulti.css" rel="stylesheet">
@@ -15,7 +12,7 @@
 </head>
 <body>
 
-<div class="container2">
+<div class="container">
   <div class="jumbotron">
   <h2>Upload</h2>
     <button type="button" id="mulitplefileuploader">Importar arquivo(s)</button>
