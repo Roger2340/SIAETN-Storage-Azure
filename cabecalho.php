@@ -1,6 +1,6 @@
 <html>
 <head lang="pt-br">
-    <title>Minha loja</title>
+    <title>Azure Storage Managment</title>
     <meta charset="utf-8">
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/loja.css" rel="stylesheet" />
