@@ -21,7 +21,7 @@
         
         $stmt->execute();
         
-    print "<table>
+    print_r "<table>
                 <tr>
                 <th>Licença</th>
                 <th>Cliente</th>
@@ -31,7 +31,7 @@
                 <th>Ações</th>
             </tr>";
     while ($arquivo  = $stmt->fetchAll(PDO::FETCH_OBJ)) {
-        print "<tr>
+        print_r "<tr>
                 <td>".$arquivo->LICENCA."</td>
                 <td>".$arquivo->NomeAbreviado."</td>
                 <td>".$arquivo->PLCA_CAVALO."</td>
@@ -46,6 +46,6 @@
 
             </tr>";
     }
-    print "</table>";*/
+    print_r "</table>";
 
 ?>
