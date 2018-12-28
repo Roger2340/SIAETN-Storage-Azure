@@ -25,4 +25,4 @@
     
 
     <div class="containers">
-        <!--<div class="principal">-->
+        <div class="principal">
