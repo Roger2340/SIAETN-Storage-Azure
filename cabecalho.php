@@ -15,8 +15,8 @@
             <div>
                 <ul class="nav navbar-nav">
 
-                    <li><a href="index(2).php">AET</a></li>
-                    <li><a href="Listar os blobs.php">Veículos</a></li>
+                    <li><a href="index(2).php">Arquivos AET</a></li>
+                    <li><a href="arquivos.php">Arquivos Veículos</a></li>
 
                 </ul>
             </div>
