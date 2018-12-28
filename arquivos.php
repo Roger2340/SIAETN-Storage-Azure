@@ -13,7 +13,7 @@
 
 <div class="container">
     <?php
-           $Menu = $_GET["M"];
+           $Menu = $_POST["M"];
      Switch ($Menu) {
          Case 1:
             echo = '<h2>Meus Arquivos para AET</h2>'
