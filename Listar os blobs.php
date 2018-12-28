@@ -8,13 +8,7 @@
 
         foreach($blobs as $blob)
         {
-		echo "<tr>
-			<td>".$arquivo->id_arquivo."</td>
-			<td>".$blob->getName()->nome."</td>
-			<td>".$blob->getUrl()->tamanho."</td>
-			<td>".$arquivo->data."</td>
-		</tr>";
-            //echo $blob->getName().": ".$blob->getUrl()."<br />";
+            echo $blob->getName().": ".$blob->getUrl()."<br />";
         }
     }
     catch (ServiceException $e){
