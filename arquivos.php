@@ -1,5 +1,6 @@
 <?php 
     include("cabecalho.php");
+    $Menu = $_GET["M"];
 ?>
 
 <head>
@@ -12,8 +13,14 @@
 <body>
 
 <div class="container">
-  <h2>Meus Arquivos para Veículos</h2>
-                                                                                        
+    <?php
+        if($Menu == 1){
+            echo = "<h2>Meus Arquivos para AET</h2>"
+        }
+        else if($Menu == 2){
+            echo = "<h2>Meus Arquivos para Veículos</h2>"
+        }
+   ?>                                                                            
   <div class="table-responsive">          
   <table class="table table-hover">
     <thead>
