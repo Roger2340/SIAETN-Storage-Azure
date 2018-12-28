@@ -1,6 +1,11 @@
 <?php
 
-    include("conexao.php")
+    //include("conexao.php")
+    // PHP Data Objects(PDO) Sample Code:
+try {
+    $conn = new PDO("sqlsrv:server = tcp:databasesiaetn.database.windows.net,1433; Database = sql_SIAETN", "ra805847", "ra3025@7610");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
     $sql = "Select 
             T1.CODIGO,
             ISNULL(T1.NUM_LICENCA, T1.NUM_PROTOCOLO) as LICENCA,
@@ -26,7 +31,11 @@
             echo $arquivo['LICENCA'];
             echo $arquivo['NomeAbreviado'];
         }
-        
+    }
+    catch (PDOException $e) {
+        print("Error connecting to SQL Server.");
+        die(print_r($e));
+    }
     /*print_r "<table>
                 <tr>
                 <th>Licença</th>
