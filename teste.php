@@ -25,18 +25,7 @@ try {
         
         
         $stmt->execute();
-        while ($arquivo = $stmt->fetchAll(PDO::FETCH_OBJ)) {
-            print_r($arquivo);
-        
-            echo $arquivo['LICENCA'];
-            echo $arquivo['NomeAbreviado'];
-        }
-    }
-    catch (PDOException $e) {
-        print("Error connecting to SQL Server.");
-        die(print_r($e));
-    }
-    /*print_r "<table>
+        print_r "<table>
                 <tr>
                 <th>Licença</th>
                 <th>Cliente</th>
@@ -46,7 +35,7 @@ try {
                 <th>Ações</th>
             </tr>";
     while ($arquivo  = $stmt->fetchAll(PDO::FETCH_OBJ)) {
-        print_r "<tr>
+        print "<tr>
                 <td>".$arquivo->LICENCA."</td>
                 <td>".$arquivo->NomeAbreviado."</td>
                 <td>".$arquivo->PLCA_CAVALO."</td>
@@ -61,6 +50,17 @@ try {
 
             </tr>";
     }
-    print_r "</table>";*/
+    print "</table>";
+       /*while ($arquivo = $stmt->fetchAll(PDO::FETCH_OBJ)) {
+            print_r($arquivo);
+        
+            echo $arquivo['LICENCA'];
+            echo $arquivo['NomeAbreviado'];
+        }*/
+    }
+    catch (PDOException $e) {
+        print("Error connecting to SQL Server.");
+        die(print_r($e));
+    }
 
 ?>
