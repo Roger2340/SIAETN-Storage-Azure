@@ -26,7 +26,7 @@
 									LEFT JOIN dbo.TBRegiao T5 ON T5.CODIGO = T1.COD_REGIAO
 									WHERE T5.SIGLA_REGIAO <> 'NULL'");
 
-			while ($arquivo = mysqli_fetch_object($result)) {
+			while ($arquivo = sqlsrv_fetch_object($result)) {
 				echo "<tr>
 						<td>".$arquivo->LICENCA."</td>
 						<td>".$arquivo->NomeAbreviado."</td>
@@ -49,7 +49,7 @@
 			
 			$result = $conn->query("DELETE FROM arquivos WHERE id_arquivo = $id_arquivo");
 
-			if(mysqli_affected_rows($conn) > 0){
+			if(sqlsrv_affected_rows($conn) > 0){
 				echo 1;
 			}else{
 				echo 0;
