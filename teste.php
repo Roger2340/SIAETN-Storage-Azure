@@ -1,7 +1,26 @@
 <?php
 
-    include("conexao.php")
-    $sql = "Select * From TBSolicitacaoes";
+    //include("conexao.php")
+    try {
+        $db = new PDO("sqlsrv:server = tcp:databasesiaetn.database.windows.net,1433; Database = sql_SIAETN", "ra805847", "ra3025@7610");	
+        
+        
+        $stmt = $db->prepare("Select * From TBSolicitacaoes");
+        
+        
+        $stmt->execute();
+        $clientes  = $stmt->fetchAll(PDO::FETCH_OBJ);
+        
+        echo '<pre>';
+            print_r($clientes);
+        echo '</pre>';
+    
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        die();
+    }
+
+    /*$sql = "Select * From TBSolicitacaoes";
     $result = sqlsrv_query($conn, $sql);
 
     print "<table>
@@ -29,5 +48,6 @@
 
             </tr>";
     }
-    print "</table>";
+    print "</table>";*/
+
 ?>
