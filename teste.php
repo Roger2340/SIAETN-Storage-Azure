@@ -15,11 +15,11 @@
             </tr>";
     while ($arquivo =  sqlsrv_fetch_object($result)) {
         print "<tr>
-                <td>".$arquivo->LICENCA."</td>
-                <td>".$arquivo->NomeAbreviado."</td>
-                <td>".$arquivo->PLCA_CAVALO."</td>
-                <td>".$arquivo->PLACA_REBOQUE."</td>
-                <td>".$arquivo->SIGLA_REGIAO."</td>
+                <td>".$arquivo->CODIGO."</td>
+                <td>".$arquivo->COD_CLIENTE."</td>
+                <td>".$arquivo->COD_CAVALO."</td>
+                <td>".$arquivo->COD_REBOQUE."</td>
+                <td>".$arquivo->COD_REGIAO."</td>
                 <td>
                     <a href='visualizar_arquivo.php?acao=VISUALIZAR&id_arquivo=".$arquivo->CODIGO."' target='_blank'><img src='IMG/pdf.png' style='width:30px; height:30px;cursor:pointer;'></a>
                     <a href='visualizar_arquivo.php?acao=DOWNLOAD&id_arquivo=".$arquivo->CODIGO."' target='_blank'><img src='IMG/download.png' style='width:30px; height:30px;cursor:pointer;'></a>
