@@ -1,6 +1,6 @@
 
 <?php
-        //include("conexao.php");
+        include("conexao.php");
         include("conexao_azure.php");
 
 		$arquivo 	= fopen($_FILES['file']['tmp_name'].'', "r");

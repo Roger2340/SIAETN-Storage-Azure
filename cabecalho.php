@@ -2,6 +2,7 @@
 <head lang="pt-br">
     <title>Azure Storage Management</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/loja.css" rel="stylesheet" />
 </head>
