@@ -39,9 +39,9 @@
 
 $(document).ready(function(){
      $.ajax({            
-            url:"Listar os blobs.php",     
+            url:"metodos.php",     
             type:"post",
-            //data:"metodo=LISTAR_ARQUIVOS",
+            data:"metodo=LISTAR_ARQUIVOS",
             beforeSend:function(){
                 
             },
