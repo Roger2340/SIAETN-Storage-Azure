@@ -22,10 +22,9 @@ try {
             WHERE T5.SIGLA_REGIAO <> 'NULL'";
 
         $stmt = $conn->prepare($sql);
-        
-        
         $stmt->execute();
-        echo "<table>
+
+        /*echo "<table>
                 <tr>
                 <th>Licença</th>
                 <th>Cliente</th>
@@ -50,13 +49,13 @@ try {
 
             </tr>";
     }
-    echo "</table>";
-       /*while ($arquivo = $stmt->fetchAll(PDO::FETCH_OBJ)) {
-            print_r($arquivo);
+    echo "</table>";*/
+       while ($arquivo = $stmt->fetchAll(PDO::FETCH_OBJ)) {
+            //print_r($arquivo);
         
             echo $arquivo['LICENCA'];
             echo $arquivo['NomeAbreviado'];
-        }*/
+        }
     }
     catch (PDOException $e) {
         print("Error connecting to SQL Server.");
