@@ -1,6 +1,6 @@
 
 <?php
-        include("conexao.php");
+        //include("conexao.php");
         include("conexao_azure.php");
 
 		$arquivo 	= fopen($_FILES['file']['tmp_name'].'', "r");
@@ -18,8 +18,8 @@
         }
 
 
-		$sql = "INSERT INTO arquivos (nome, tamanho, data) VALUES ('$nome','$tamanho',now())";
+		//$sql = "INSERT INTO arquivos (nome, tamanho, data) VALUES ('$nome','$tamanho',now())";
 
-     	$result = $conn->query($sql)or die(mysqli_errno());
+     	//$result = $conn->query($sql)or die(mysqli_errno());
 
 ?>
