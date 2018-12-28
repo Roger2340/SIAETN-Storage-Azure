@@ -10,13 +10,13 @@
     
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.php">Minha Loja</a>
+                <a class="navbar-brand" href="index.php">Gerenciamento de Armazenamento Azure</a>
             </div>
             <div>
                 <ul class="nav navbar-nav">
 
-                    <li><a href="produto-formulario.php">Adiciona produto</a></li>
-                    <li><a href="produto-lista.php">Lista de Produtos</a></li>
+                    <li><a href="index(2).php">AET</a></li>
+                    <li><a href="Listar os blobs.php">Veículos</a></li>
 
                 </ul>
             </div>
