@@ -18,6 +18,7 @@
 
         $stmt = $conn->prepare($sql);
         $stmt->execute();
+        $arquivo = $stmt->fetchAll(PDO::FETCH_OBJ);
 
         /*echo "<table>
                 <tr>
@@ -45,9 +46,10 @@
             </tr>";
     }
     echo "</table>";*/
-       while ($arquivo = $stmt->fetchAll(PDO::FETCH_OBJ)) {
-            print_r($arquivo);
-        
+            echo '<pre>';
+                print_r($arquivo);
+            echo '</pre>';
+            
             //echo $arquivo->LICENCA;
             //echo $arquivo->NomeAbreviado;
         }
