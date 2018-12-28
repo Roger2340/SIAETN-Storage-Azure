@@ -12,18 +12,7 @@
 <body>
 
 <div class="container">
-    <?php
-           $Menu = $_POST["M"];
-     Switch ($Menu) {
-         Case 1:
-            echo = '<h2>Meus Arquivos para AET</h2>'
-         break;
-         
-         Case 2:
-            echo = '<h2>Meus Arquivos para Veículos</h2>'
-         break;
-     }
-   ?>                                                                            
+   <h2>Meus Arquivos para AET</h2>                                                                         
   <div class="table-responsive">          
   <table class="table table-hover">
     <thead>
