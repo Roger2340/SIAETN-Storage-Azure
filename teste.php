@@ -20,8 +20,14 @@
         
         
         $stmt->execute();
+        while ($arquivo = $allProdsQuery->fetch()) {
+            print_r($arquivo);
         
-    print_r "<table>
+            echo $arquivo['LICENCA'];
+            echo $arquivo['NomeAbreviado'];
+        }
+        
+    /*print_r "<table>
                 <tr>
                 <th>Licença</th>
                 <th>Cliente</th>
@@ -46,6 +52,6 @@
 
             </tr>";
     }
-    print_r "</table>";
+    print_r "</table>";*/
 
 ?>
