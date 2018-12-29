@@ -5,7 +5,7 @@ $serverName = "tcp:databasesiaetn.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
 if($conn){
-    echo 'Conexao estabelecida';
+    echo 'Conexao estabelecida<br />';
 } else {
     echo 'Conexao Falhou <br />';
     die(print_r(sqlsrv_erros(),TRUE));
@@ -18,7 +18,7 @@ if($stmt==false){
     die(print_r(sqlsrv_erros(),TRUE));
 }
 $row = sqlsrv_fetch_array($stmt);
-echo 'The requited quantity is: '.$row['qty'];
+echo 'The requited quantity is: '.$row['CODIGO'];
 /*$stmt->execute();
 $arquivo = $stmt->fetchAll(PDO::FETCH_OBJ);*/
 
