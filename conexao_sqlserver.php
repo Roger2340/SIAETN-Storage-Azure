@@ -21,7 +21,10 @@ if($conn){
         </tr>
 <?php
     $sql = 'Select * from TBSolicitacaoes'
-    foreach($conn->sqlsrv_query($sql) as $row){
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $arquivo = $stmt->fetchAll(PDO::FETCH_OBJ);
+    foreach($arquivo as $row){
 ?>
     <tr>
         <td><?php print $row['CODIGO']; ?></td>
