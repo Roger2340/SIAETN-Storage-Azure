@@ -13,13 +13,14 @@ if($conn){
 
 $sql = 'Select * from TBSolicitacaoes';
 $stmt = sqlsrv_query($conn,$sql);
-if($stmt==false){
-    echo 'Error to retrieve info!!<br />';
-    die(print_r(sqlsrv_erros(),TRUE));
-}
-$row = sqlsrv_fetch_array($stmt);
-echo 'The requited quantity is: '.$row['CODIGO'];
-/*$stmt->execute();
-$arquivo = $stmt->fetchAll(PDO::FETCH_OBJ);*/
+$arquivo = $stmt->fetchAll();
 
+foreach($arquivos as $arquivo){
+    print '<tr>
+    <td>'.$arquivo['CODIGO'].'</td>
+    <td>'.$arquivo['COD_CLIENTE'].'</td>
+    <td>'.$arquivo['COD_REGIAO'].'</td>
+    <td>'.$arquivo['COD_CAVALO'].'</td>
+    <td>'.$arquivo['COD_REBOQUE'].'</td>';
+}
 ?>
