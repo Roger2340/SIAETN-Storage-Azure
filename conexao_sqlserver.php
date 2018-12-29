@@ -26,11 +26,11 @@ if($conn){
     foreach($rows as $row){
 ?>
     <tr>
-        <td><?php print $row['CODIGO']; ?></td>
-        <td><?php print $row['COD_CLIENTE']; ?></td>
-        <td><?php print $row['COD_REGIAO']; ?></td>
-        <td><?php print $row['COD_CAVALO']; ?></td>
-        <td><?php print $row['COD_REBOQUE']; ?></td>
+        <td><?php print $row[0]->CODIGO; ?></td>
+        <td><?php print $row[0]->COD_CLIENTE ?></td>
+        <td><?php print $row[0]->COD_REGIAO; ?></td>
+        <td><?php print $row[0]->COD_CAVALO; ?></td>
+        <td><?php print $row[0]->COD_REBOQUE; ?></td>
     </tr>
 <?php
     }
