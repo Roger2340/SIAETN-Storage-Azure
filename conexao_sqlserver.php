@@ -14,13 +14,26 @@ if($conn){
 $sql = 'Select * from TBSolicitacaoes';
 $stmt = sqlsrv_query($conn,$sql);
 $arquivo = $stmt->fetchAll();
-
-foreach($arquivos as $arquivo){
-    print '<tr>
-    <td>'.$arquivo['CODIGO'].'</td>
-    <td>'.$arquivo['COD_CLIENTE'].'</td>
-    <td>'.$arquivo['COD_REGIAO'].'</td>
-    <td>'.$arquivo['COD_CAVALO'].'</td>
-    <td>'.$arquivo['COD_REBOQUE'].'</td>';
-}
+?>
+    <table border=1>
+        <tr>
+            <th>Licença</th>
+            <th>Cliente</th>
+            <th>Placa Cavalo</th>
+            <th>Placa Reboque</th>
+            <th>Região</th>
+            <th>Ações</th>
+        </tr>
+<?php
+    foreach($arquivos as $arquivo){
+?>
+    <tr>
+        <td><?php $arquivo['CODIGO']?></td>
+        <td><?php $arquivo['COD_CLIENTE']?></td>
+        <td><?php $arquivo['COD_REGIAO']?></td>
+        <td><?php $arquivo['COD_CAVALO']?></td>
+        <td><?php $arquivo['COD_REBOQUE']?></td>
+    </tr>
+<?php
+    }
 ?>
