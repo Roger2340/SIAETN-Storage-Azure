@@ -10,7 +10,7 @@
         print("Error connecting to SQL Server.");
         die(print_r($e));
     }
-    $sql = "Select 
+    $sql = "Select * from TBSolicitacaoes "; /*"Select 
             T1.CODIGO,
             ISNULL(T1.NUM_LICENCA, T1.NUM_PROTOCOLO) as LICENCA,
             T2.NomeAbreviado,
@@ -23,11 +23,15 @@
             LEFT JOIN dbo.TBVeiculos T3 ON T3.CODIGO = T1.COD_CAVALO
             LEFT JOIN dbo.TBVeiculos T4 ON T4.CODIGO = T1.COD_REBOQUE
             LEFT JOIN dbo.TBRegiao T5 ON T5.CODIGO = T1.COD_REGIAO
-            WHERE T5.SIGLA_REGIAO <> 'NULL'";
+            WHERE T5.SIGLA_REGIAO <> 'NULL'";*/
 
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $arquivo = $stmt->fetchAll(PDO::FETCH_OBJ);
+        
+        echo '<pre>';
+            print_r($arquivo);
+        echo '</pre>';
 
         /*echo "<table>
                 <tr>
@@ -54,13 +58,10 @@
 
             </tr>";
     }
-    echo "</table>";*/
-            echo '<pre>';
-                print_r($arquivo);
-            echo '</pre>';
+    echo "</table>";
 
-            //echo $arquivo->LICENCA;
-            //echo $arquivo->NomeAbreviado;
-        }
+            echo $arquivo->LICENCA;
+            echo $arquivo->NomeAbreviado;
+        }*/
 
 ?>
