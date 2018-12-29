@@ -35,7 +35,7 @@ catch(Exception $e){
         </tr>
 <?php
     foreach($arquivos as $arquivo){
-        $index = 0
+        echo $arquivos;
 ?>
     <tr>
         <td><?php echo $arquivo[$index]->CODIGO; ?></td>
@@ -45,7 +45,6 @@ catch(Exception $e){
         <td><?php echo $arquivo[$index]->COD_REBOQUE; ?></td>
     </tr>
 <?php
-    $index = $index + 1
     }
     
 ?>
