@@ -10,7 +10,7 @@
         print("Error connecting to SQL Server.");
         die(print_r($e));
     }
-    $sql = "Select * from TBSolicitacaoes "; /*"Select 
+    $sql = 'Select * from TBSolicitacaoes'; /*"Select 
             T1.CODIGO,
             ISNULL(T1.NUM_LICENCA, T1.NUM_PROTOCOLO) as LICENCA,
             T2.NomeAbreviado,
@@ -28,7 +28,7 @@
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $arquivo = $stmt->fetchAll(PDO::FETCH_OBJ);
-        
+
         echo '<pre>';
             print_r($arquivo);
         echo '</pre>';

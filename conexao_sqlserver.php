@@ -11,4 +11,15 @@ if($conn){
     die(print_r(sqlsrv_erros(),TRUE));
 }
 
+$sql = 'Select * from TBSolicitacaoes';
+$stmt = sqlsrv_query($conn,$sql);
+if($stmt==false){
+    echo 'Error to retrieve info!!<br />';
+    die(print_r(sqlsrv_erros(),TRUE));
+}
+$row = sqlsrv_fetch_array($stmt);
+echo 'The requited quantity is: '.$row['qty'];
+/*$stmt->execute();
+$arquivo = $stmt->fetchAll(PDO::FETCH_OBJ);*/
+
 ?>
