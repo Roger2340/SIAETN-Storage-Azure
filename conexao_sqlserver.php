@@ -16,7 +16,7 @@ try{
 
     /*$stmt = $conn->sqlsrv_query("Select * from TBSolicitacaoes");
     $arquivo = $stmt->fetchAll();*/
-    //print_r ($arquivo);
+    print_r ($arquivo);
 }
 catch(Exception $e){
     echo $e->getMessage();
@@ -45,4 +45,5 @@ catch(Exception $e){
     </tr>
 <?php
     }
+    print_r($arquivo);
 ?>
