@@ -11,9 +11,10 @@ if($conn){
     die(print_r(sqlsrv_erros(),TRUE));
 }
 
-/*$sql = 'Select * from TBSolicitacaoes';
+$sql = 'Select * from TBSolicitacaoes';
 $stmt = $conn->query($sql);
-$arquivo = $stmt->fetchAll();*/
+$arquivo = $stmt->fetchAll();
+print_r ($arquivo);
 ?>
     <table border=1>
         <tr>
