@@ -9,20 +9,6 @@ if($conn){
     echo 'Conexao Falhou <br />';
     die(print_r(sqlsrv_erros(),TRUE));
 }
-try{
-    $stmt = $conn->prepare("Select * from TBSolicitacaoes");
-        $stmt->execute();
-        $arquivo = $stmt->fetchAll(PDO::FETCH_OBJ);
-
-    /*$stmt = $conn->sqlsrv_query("Select * from TBSolicitacaoes");
-    $arquivo = $stmt->fetchAll();*/
-    //print_r ($arquivo);
-}
-catch(Exception $e){
-    echo $e->getMessage();
-    exit;
-}
-
 ?>
     <table border=1>
         <tr>
@@ -34,15 +20,15 @@ catch(Exception $e){
             <th>Ações</th>
         </tr>
 <?php
-    foreach($arquivos as $arquivo){
-        echo $arquivos;
+    $sql = 'Select * from TBSolicitacaoes'
+    foreach($conn->query($sql) as $row){
 ?>
     <tr>
-        <td><?php echo $arquivo[$index]->CODIGO; ?></td>
-        <td><?php echo $arquivo[$index]->COD_CLIENTE; ?></td>
-        <td><?php echo $arquivo[$index]->COD_REGIAO; ?></td>
-        <td><?php echo $arquivo[$index]->COD_CAVALO; ?></td>
-        <td><?php echo $arquivo[$index]->COD_REBOQUE; ?></td>
+        <td><?php print $row['CODIGO']; ?></td>
+        <td><?php print $row['COD_CLIENTE']; ?></td>
+        <td><?php print $row['COD_REGIAO']; ?></td>
+        <td><?php print $row['COD_CAVALO']; ?></td>
+        <td><?php print $row['COD_REBOQUE']; ?></td>
     </tr>
 <?php
     }
