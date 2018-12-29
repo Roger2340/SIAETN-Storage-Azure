@@ -12,7 +12,7 @@ if($conn){
 }
 
 $sql = 'Select * from TBSolicitacaoes';
-$stmt = sqlsrv_query($conn,$sql);
+$stmt = $conn->query($sql);
 $arquivo = $stmt->fetchAll();
 ?>
     <table border=1>
