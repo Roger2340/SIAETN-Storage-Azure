@@ -21,7 +21,7 @@ if($conn){
         </tr>
 <?php
     $sql = 'Select * from TBSolicitacaoes'
-    foreach($conn->query($sql) as $row){
+    foreach($conn->sqlsrv_query($sql) as $row){
 ?>
     <tr>
         <td><?php print $row['CODIGO']; ?></td>
