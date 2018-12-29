@@ -37,11 +37,11 @@ catch(Exception $e){
     foreach($arquivos as $arquivo){
 ?>
     <tr>
-        <td><?php $arquivo['CODIGO']?></td>
-        <td><?php $arquivo['COD_CLIENTE']?></td>
-        <td><?php $arquivo['COD_REGIAO']?></td>
-        <td><?php $arquivo['COD_CAVALO']?></td>
-        <td><?php $arquivo['COD_REBOQUE']?></td>
+        <td><?php $arquivo[$arquivos]->CODIGO?></td>
+        <td><?php $arquivo[$arquivos]->COD_CLIENTE?></td>
+        <td><?php $arquivo[$arquivos]->COD_REGIAO?></td>
+        <td><?php $arquivo[$arquivos]->COD_CAVALO?></td>
+        <td><?php $arquivo[$arquivos]->COD_REBOQUE?></td>
     </tr>
 <?php
     }
