@@ -20,11 +20,10 @@ if($conn){
             <th>Ações</th>
         </tr>
 <?php
-    $sql = 'Select * from TBSolicitacaoes'
-    $stmt = $conn->prepare($sql);
+    $stmt = $conn->prepare("Select * from TBSolicitacaoes");
     $stmt->execute();
-    $arquivo = $stmt->fetchAll(PDO::FETCH_OBJ);
-    foreach($arquivo as $row){
+    $row = $stmt->fetchAll();
+    foreach($rows as $row){
 ?>
     <tr>
         <td><?php print $row['CODIGO']; ?></td>
