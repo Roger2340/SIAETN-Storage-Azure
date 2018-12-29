@@ -10,8 +10,12 @@ if($conn){
     die(print_r(sqlsrv_erros(),TRUE));
 }
 try{
-    $stmt = $conn->sqlsrv_query("Select * from TBSolicitacaoes");
-    $arquivo = $stmt->fetchAll();
+    $stmt = $conn->prepare("Select * from TBSolicitacaoes");
+        $stmt->execute();
+        $arquivo = $stmt->fetchAll(); //fetchAll(PDO::FETCH_OBJ);
+
+    /*$stmt = $conn->sqlsrv_query("Select * from TBSolicitacaoes");
+    $arquivo = $stmt->fetchAll();*/
     print_r ($arquivo);
 }
 catch(Exception $e){
