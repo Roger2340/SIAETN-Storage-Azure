@@ -12,7 +12,7 @@ if($conn){
 try{
     $stmt = $conn->prepare("Select * from TBSolicitacaoes");
         $stmt->execute();
-        $arquivo = $stmt->fetchAll(); //fetchAll(PDO::FETCH_OBJ);
+        $arquivo = $stmt->fetchAll(PDO::FETCH_OBJ);
 
     /*$stmt = $conn->sqlsrv_query("Select * from TBSolicitacaoes");
     $arquivo = $stmt->fetchAll();*/
