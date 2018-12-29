@@ -11,9 +11,9 @@ if($conn){
     die(print_r(sqlsrv_erros(),TRUE));
 }
 
-$sql = 'Select * from TBSolicitacaoes';
+/*$sql = 'Select * from TBSolicitacaoes';
 $stmt = $conn->query($sql);
-$arquivo = $stmt->fetchAll();
+$arquivo = $stmt->fetchAll();*/
 ?>
     <table border=1>
         <tr>
@@ -24,16 +24,3 @@ $arquivo = $stmt->fetchAll();
             <th>Região</th>
             <th>Ações</th>
         </tr>
-<?php
-    foreach($arquivos as $arquivo){
-?>
-    <tr>
-        <td><?php $arquivo['CODIGO']?></td>
-        <td><?php $arquivo['COD_CLIENTE']?></td>
-        <td><?php $arquivo['COD_REGIAO']?></td>
-        <td><?php $arquivo['COD_CAVALO']?></td>
-        <td><?php $arquivo['COD_REBOQUE']?></td>
-    </tr>
-<?php
-    }
-?>
