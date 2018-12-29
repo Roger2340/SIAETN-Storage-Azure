@@ -10,11 +10,17 @@ if($conn){
     echo 'Conexao Falhou <br />';
     die(print_r(sqlsrv_erros(),TRUE));
 }
+try{
+    $sql = 'Select * from TBSolicitacaoes';
+    $stmt = $conn->query($sql);
+    $arquivo = $stmt->fetchAll();
+    print_r ($arquivo);
+}
+catch(Exception $e){
+    echo $e->getMessage();
+    exit;
+}
 
-$sql = 'Select * from TBSolicitacaoes';
-$stmt = $conn->query($sql);
-$arquivo = $stmt->fetchAll();
-print_r ($arquivo);
 ?>
     <table border=1>
         <tr>
