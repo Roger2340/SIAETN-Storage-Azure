@@ -16,7 +16,7 @@ try{
 
     /*$stmt = $conn->sqlsrv_query("Select * from TBSolicitacaoes");
     $arquivo = $stmt->fetchAll();*/
-    print_r ($arquivo);
+    //print_r ($arquivo);
 }
 catch(Exception $e){
     echo $e->getMessage();
@@ -33,3 +33,16 @@ catch(Exception $e){
             <th>Região</th>
             <th>Ações</th>
         </tr>
+<?php
+    foreach($arquivos as $arquivo){
+?>
+    <tr>
+        <td><?php $arquivo['CODIGO']?></td>
+        <td><?php $arquivo['COD_CLIENTE']?></td>
+        <td><?php $arquivo['COD_REGIAO']?></td>
+        <td><?php $arquivo['COD_CAVALO']?></td>
+        <td><?php $arquivo['COD_REBOQUE']?></td>
+    </tr>
+<?php
+    }
+?>
