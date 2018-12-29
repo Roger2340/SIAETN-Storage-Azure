@@ -1,8 +1,7 @@
 <?php
 
-$connectionInfo = array("UID" => "ra805847@databasesiaetn", "pwd" => "ra3025@7610", "Database" => "sql_SIAETN", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-$serverName = "tcp:databasesiaetn.database.windows.net,1433";
-$conn = sqlsrv_connect($serverName, $connectionInfo);
+$conn = new PDO("sqlsrv:server = tcp:databasesiaetn.database.windows.net,1433; Database = sql_SIAETN", "ra805847", "ra3025@7610");
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 if($conn){
     echo 'Conexao estabelecida<br />';
@@ -11,8 +10,7 @@ if($conn){
     die(print_r(sqlsrv_erros(),TRUE));
 }
 try{
-    $sql = 'Select * from TBSolicitacaoes';
-    $stmt = $conn->query($sql);
+    $stmt = $conn->sqlsrv_query("Select * from TBSolicitacaoes");
     $arquivo = $stmt->fetchAll();
     print_r ($arquivo);
 }
